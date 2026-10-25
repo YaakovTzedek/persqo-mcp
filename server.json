@@ -1,12 +1,12 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-09-29/server.schema.json",
   "name": "com.persqo/persqo",
-  "description": "AI personas test your web app like real users and return fix prompts.",
-  "version": "0.1.0",
+  "description": "AI personas test your web app like real users and return findings and fix prompts. Tools cover projects, runs, personas, schedules, tickets, and visitor place (spoken language, browser locale, country, and city).",
+  "version": "0.2.0",
   "websiteUrl": "https://persqo.com",
   "repository": { "url": "https://github.com/YaakovTzedek/persqo-mcp", "source": "github" },
   "packages": [{
-    "registryType": "npm", "identifier": "persqo-mcp", "version": "0.1.0",
+    "registryType": "npm", "identifier": "persqo-mcp", "version": "0.2.0",
     "transport": { "type": "stdio" },
     "environmentVariables": [
       { "name": "PERSQO_API_KEY", "description": "Persqo API key (pq_live_...)", "isRequired": true, "isSecret": true },
@@ -15,6 +15,6 @@
   }],
   "remotes": [{
     "type": "streamable-http", "url": "https://persqo.com/api/mcp",
-    "headers": [{ "name": "Authorization", "description": "Bearer pq_live_ API key", "isRequired": true, "isSecret": true }]
+    "headers": [{ "name": "Authorization", "description": "Bearer token. Value is Bearer followed by PERSQO_API_KEY (pq_live_...).", "isRequired": true, "isSecret": true }]
   }]
 }

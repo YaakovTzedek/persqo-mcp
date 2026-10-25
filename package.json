@@ -1,7 +1,7 @@
 {
   "name": "persqo-mcp",
-  "version": "0.1.0",
-  "description": "MCP server for Persqo: AI personas test your web app like real users and return fix prompts to Claude Code, Cursor and Codex.",
+  "version": "0.2.0",
+  "description": "MCP server for Persqo. AI personas test a site in a real browser and return findings and fix prompts. Speaks the live https://persqo.com/api/mcp tool list, including persona language, locale, country, and city.",
   "type": "module",
   "bin": { "persqo-mcp": "./bin.js" },
   "files": ["bin.js", "bin.d.ts", "README.md", "LICENSE"],
