@@ -1,0 +1,15 @@
+{
+  "name": "persqo-mcp",
+  "version": "0.1.0",
+  "description": "MCP server for Persqo: AI personas test your web app like real users and return fix prompts to Claude Code, Cursor and Codex.",
+  "type": "module",
+  "bin": { "persqo-mcp": "./bin.js" },
+  "files": ["bin.js", "bin.d.ts", "README.md", "LICENSE"],
+  "engines": { "node": ">=18" },
+  "license": "MIT",
+  "mcpName": "com.persqo/persqo",
+  "homepage": "https://persqo.com",
+  "repository": { "type": "git", "url": "git+https://github.com/YaakovTzedek/persqo-mcp.git" },
+  "bugs": { "url": "https://github.com/YaakovTzedek/persqo-mcp/issues" },
+  "keywords": ["mcp", "model-context-protocol", "testing", "qa", "usability", "ai-agents", "claude-code", "cursor"]
+}

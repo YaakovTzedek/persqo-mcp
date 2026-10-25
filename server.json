@@ -1,0 +1,20 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-09-29/server.schema.json",
+  "name": "com.persqo/persqo",
+  "description": "AI personas test your web app like real users and return fix prompts.",
+  "version": "0.1.0",
+  "websiteUrl": "https://persqo.com",
+  "repository": { "url": "https://github.com/YaakovTzedek/persqo-mcp", "source": "github" },
+  "packages": [{
+    "registryType": "npm", "identifier": "persqo-mcp", "version": "0.1.0",
+    "transport": { "type": "stdio" },
+    "environmentVariables": [
+      { "name": "PERSQO_API_KEY", "description": "Persqo API key (pq_live_...)", "isRequired": true, "isSecret": true },
+      { "name": "PERSQO_API_BASE", "description": "API base URL", "default": "https://persqo.com" }
+    ]
+  }],
+  "remotes": [{
+    "type": "streamable-http", "url": "https://persqo.com/api/mcp",
+    "headers": [{ "name": "Authorization", "description": "Bearer pq_live_ API key", "isRequired": true, "isSecret": true }]
+  }]
+}
