@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { realpathSync } from "node:fs";
 import { pathToFileURL } from "node:url";
 
 export const TOOL_NAMES = ["generate_personas", "get_findings", "get_fix_prompt", "get_test_status", "list_tests", "run_test"];
@@ -221,7 +222,15 @@ async function emit(raw) {
   if (response) process.stdout.write(encode(response));
 }
 
-const entry = process.argv[1] ? pathToFileURL(process.argv[1]).href : "";
-if (import.meta.url === entry) main();
+// npx links the bin through a symlink. import.meta.url is the real file, so resolve argv before comparing.
+function entryHref() {
+  if (!process.argv[1]) return "";
+  try {
+    return pathToFileURL(realpathSync(process.argv[1])).href;
+  } catch {
+    return "";
+  }
+}
+if (import.meta.url === entryHref()) main();
 
 
